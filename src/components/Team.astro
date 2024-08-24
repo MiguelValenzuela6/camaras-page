@@ -1,19 +1,11 @@
 ---
 import Badge from './Badge.astro';
 import Instagram from './icons/Instagram.astro';
-import '../index.css';
-import { css } from '../../styled-system/css';
-import { cva } from '../../styled-system/css/cva.mjs';
-
-const NETWORK = {
-    IG: {
-        icon: Instagram,
-    }
-}
 
 type TEAM = {
     name: string,
     charge: string,
+    classImage: string,
     image: string,
     description: string,
     link: string
@@ -21,21 +13,20 @@ type TEAM = {
 
 const team: TEAM[] = [
     {
-        name: 'Eddy',
+        name: "Eddy",
         charge: 'Perra mayor',
-        image: '/Team/image5.png',
+        classImage: "before:bg-[url('/Team/perra.jpeg')]",
+        image: '/Team/perra.jpeg',
         description: 'Ser la puta de todos',
-        link: 'www.google.com'
+        link: "https://www.google.com"
     }
 ]
 ---
 <div class="flex flex-row gap-x-8 justify-center">
     {
-        team.map(({ name, charge, image, description, link }) => (
+        team.map(({ name, charge, classImage, image, description, link }) => (
             <article class="container">
-                <div class={ "profile-container " + css({
-                    _before: { background: `url(${ image }) no-repeat center center/cover` }
-                }) }>
+                <div class={`profile-container ${ classImage } before:bg-cover before:bg-no-repeat before:bg-center`}>
                     <div class="profile-wrapper">
                         <div class="profile-card">
         
@@ -48,10 +39,10 @@ const team: TEAM[] = [
                             <p>{ description }</p>
         
                             <!-- Social Icons -->
-                            <div class="icons">
-                                <Badge>
-                                    { link }
-                                </Badge>
+                            <div >
+                                <a href={ link } class="hover:bg-gradient-to-r hover:rounded-full hover:from-violet-400 hover:to-cyan-600  p-2 flex content-center place-content-center m-auto items-center justify-center justify-items-center" >
+                                    <Instagram class=" " />
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -201,25 +192,25 @@ const team: TEAM[] = [
     }
 
     /* Profile Icons */
-    .profile-card .icons {
+    /* .profile-card .icons {
         display: flex;
         color: #333;
         width: 90%;
         justify-content: space-evenly;
         font-size: 1.4rem;
         margin: 5px 0;
-    }
+    } */
 
-    .profile-card .icons i:hover {
+    /* .profile-card .icons a:hover {
         background-image: linear-gradient(to right, #bb47d4 0%, #2371ae 100%);
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         cursor: pointer;
-    }
+    } */
 
     /* Profile Button */
-    .profile-card a {
+    /* .profile-card svg {
         display: inline-block;
         text-decoration: none;
         font-size: 16px;
@@ -230,6 +221,7 @@ const team: TEAM[] = [
         background: #2371ae;
         border-radius: 50px;
         background: linear-gradient(to right, #bb47d4 0%, #2371ae 100%);
-    }
+    } */
+
 
 </style>
