@@ -19,14 +19,45 @@ const team: TEAM[] = [
         image: '/Team/perra.jpeg',
         description: 'Ser la puta de todos',
         link: "https://www.google.com"
+    },
+    {
+        name: "Eddy",
+        charge: 'Perra mayor',
+        classImage: "before:bg-[url('/Team/perra.jpeg')]",
+        image: '/Team/perra.jpeg',
+        description: 'Ser la puta de todos',
+        link: "https://www.google.com"
+    },
+    {
+        name: "Eddy",
+        charge: 'Perra mayor',
+        classImage: "before:bg-[url('/Team/perra.jpeg')]",
+        image: '/Team/perra.jpeg',
+        description: 'Ser la puta de todos',
+        link: "https://www.google.com"
+    },
+    {
+        name: "Eddy",
+        charge: 'Perra mayor',
+        classImage: "before:bg-[url('/Team/perra.jpeg')]",
+        image: '/Team/perra.jpeg',
+        description: 'Ser la puta de todos',
+        link: "https://www.google.com"
     }
 ]
 ---
-<div class="flex flex-row gap-x-8 justify-center">
+<section class="flex lg:flex-row flex-col gap-8 justify-center items-center container md:mx-auto px-4">
+  <h3 class="sr-only">
+    Team members
+    </h3>
     {
         team.map(({ name, charge, classImage, image, description, link }) => (
-            <article class="container">
-                <div class={`profile-container ${ classImage } before:bg-cover before:bg-no-repeat before:bg-center`}>
+        
+                <article  class={`profile-container ${ classImage } before:bg-cover before:bg-no-repeat before:bg-center  `}>
+
+                  <style>
+        
+                    </style>
                     <div class="profile-wrapper">
                         <div class="profile-card">
         
@@ -50,26 +81,20 @@ const team: TEAM[] = [
                             </div>
                         </div>
                     </div>
-                </div>
-            </article>
+                </article>
+      
         ))
     }
-</div>
+</section>
 
 
 <style>
-    .container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        width: 100vw;
-    }
+
 
     /* .profile-container:hover */
     .profile-container {
-        width: 400px;
-        height: 550px;
+      width: clamp(  1%, 100%, 400px);
+        height: 500px;
         position: relative;
         overflow: hidden;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
