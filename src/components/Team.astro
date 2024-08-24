@@ -5,7 +5,6 @@ import Instagram from './icons/Instagram.astro';
 type TEAM = {
     name: string,
     charge: string,
-    classImage: string,
     image: string,
     description: string,
     link: string
@@ -15,82 +14,68 @@ const team: TEAM[] = [
     {
         name: "Eddy",
         charge: 'Perra mayor',
-        classImage: "before:bg-[url('/Team/perra.jpeg')]",
         image: '/Team/perra.jpeg',
-        description: 'Ser la puta de todos',
-        link: "https://www.google.com"
+        description: 'La inteligencia artificial es tecnología que simula procesos humanos, como el aprendizaje y la toma de decisiones, usando algoritmos y datos.',
+        link: "https://www.instagram.com/edmiphoto/"
     },
     {
-        name: "Eddy",
+        name: "Pacho Velandia",
         charge: 'Perra mayor',
-        classImage: "before:bg-[url('/Team/perra.jpeg')]",
-        image: '/Team/perra.jpeg',
+        image: '/Team/Pacho.jpg',
         description: 'Ser la puta de todos',
-        link: "https://www.google.com"
+        link: "https://www.instagram.com/pacho.inc/"
     },
     {
-        name: "Eddy",
+        name: "Luisfer",
         charge: 'Perra mayor',
-        classImage: "before:bg-[url('/Team/perra.jpeg')]",
         image: '/Team/perra.jpeg',
         description: 'Ser la puta de todos',
-        link: "https://www.google.com"
+        link: "https://www.instagram.com/lf_sickman/"
     },
-    {
-        name: "Eddy",
-        charge: 'Perra mayor',
-        classImage: "before:bg-[url('/Team/perra.jpeg')]",
-        image: '/Team/perra.jpeg',
-        description: 'Ser la puta de todos',
-        link: "https://www.google.com"
-    }
+
 ]
 ---
-<section class="flex lg:flex-row flex-col gap-8 justify-center items-center container md:mx-auto px-4">
+<section style="grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr))" class="grid gap-8 justify-center items-center container mx-auto px-4">
   <h3 class="sr-only">
     Team members
     </h3>
     {
-        team.map(({ name, charge, classImage, image, description, link }) => (
-        
-                <article  class={`profile-container ${ classImage } before:bg-cover before:bg-no-repeat before:bg-center  `}>
-
-                  <style>
-        
-                    </style>
-                    <div class="profile-wrapper">
-                        <div class="profile-card">
-        
-                        <!-- Profile-Picture -->
-                            <img src={ image } alt="profile pics"/>
-        
-                            <h2>{ name }</h2>
-                            <h4>{ charge }</h4>
-        
-                            <p>{ description }</p>
-        
-                            <!-- Social Icons -->
-                            <div >
-                                <a href={ link }
-                                class:list={["hover:bg-gradient-to-r hover:rounded-full hover:from-violet-400 hover:to-cyan-600",
-                                "p-1.5 flex content-center place-content-center m-auto items-center justify-center justify-items-center"
-                                ]}
-                                >
-                                    <Instagram class=" " />
-                                </a>
-                            </div>
+        team.map(({ name, charge, image, description, link }) => (
+            <article  style={`--bg-image: url('${image}')`} class={`profile-container  before:bg-cover before:bg-no-repeat before:bg-center mx-auto`}>
+                <div class="profile-wrapper">
+                    <div class="profile-card">
+    
+                    <!-- Profile-Picture -->
+                        <img src={ image } alt="profile pics"/>
+    
+                        <h2 class="font-extrabold text-2xl py-1">{ name }</h2>
+                        <h4 class="font-semibold text-xl text-white/50">{ charge }</h4>
+    
+                        <p class="font-normal">{ description }</p>
+    
+                        <!-- Social Icons -->
+                        <div >
+                            <a href={ link }
+                            class:list={["hover:bg-gradient-to-r hover:rounded-full hover:from-violet-400 hover:to-cyan-600",
+                            "p-1.5 flex content-center place-content-center m-auto items-center justify-center justify-items-center"
+                            ]}
+                            >
+                                <Instagram class=" " />
+                            </a>
                         </div>
                     </div>
-                </article>
-      
+                </div>
+            </article>
         ))
     }
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
 </section>
 
 
 <style>
-
-
     /* .profile-container:hover */
     .profile-container {
       width: clamp(  1%, 100%, 400px);
@@ -101,7 +86,6 @@ const team: TEAM[] = [
         border-radius: 12px;
         transition: 1s all ease;
     }
-
     .profile-container::before {
         content: '';
         position: absolute;
@@ -109,7 +93,7 @@ const team: TEAM[] = [
         left: 0;
         width: 100%;
         height: 100%;
-        /* background: url(${ image }) no-repeat center center/cover; */
+        background-image: var( --bg-image );
         z-index: -1;
         opacity: 1;
         transition: all .5s ease-in;
@@ -206,18 +190,17 @@ const team: TEAM[] = [
 
     .profile-card h2 {
         line-height: 1.2;
-        color: #222;
+        color: white;
     }
 
     .profile-card h4 {
         line-height: 1.5;
-        color: #444;
     }
 
     .profile-card p {
         line-height: 1.2;
-        color: #333;
-        margin: 10px 0;
+        color: white;
+        margin: 10px 12px;
     }
 
     /* Profile Icons */
@@ -251,6 +234,4 @@ const team: TEAM[] = [
         border-radius: 50px;
         background: linear-gradient(to right, #bb47d4 0%, #2371ae 100%);
     } */
-
-
 </style>
