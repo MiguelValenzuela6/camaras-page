@@ -40,7 +40,11 @@ const team: TEAM[] = [
         
                             <!-- Social Icons -->
                             <div >
-                                <a href={ link } class="hover:bg-gradient-to-r hover:rounded-full hover:from-violet-400 hover:to-cyan-600  p-2 flex content-center place-content-center m-auto items-center justify-center justify-items-center" >
+                                <a href={ link }
+                                class:list={["hover:bg-gradient-to-r hover:rounded-full hover:from-violet-400 hover:to-cyan-600",
+                                "p-1.5 flex content-center place-content-center m-auto items-center justify-center justify-items-center"
+                                ]}
+                                >
                                     <Instagram class=" " />
                                 </a>
                             </div>
