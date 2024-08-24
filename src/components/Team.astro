@@ -35,10 +35,7 @@ const team: TEAM[] = [
 
 ]
 ---
-<section style="grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr))" class="grid gap-8 justify-center items-center container mx-auto px-4">
-  <h3 class="sr-only">
-    Team members
-    </h3>
+<section style="grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr))" class="grid gap-8 justify-center items-center container mx-auto px-5">
     {
         team.map(({ name, charge, image, description, link }) => (
             <article  style={`--bg-image: url('${image}')`} class={`profile-container  before:bg-cover before:bg-no-repeat before:bg-center mx-auto`}>
