@@ -1,9 +1,9 @@
 ---
-import Slider from "./Slider.astro";
 import Card2 from "./Card2.astro";
+import Slider from "./Slider.astro";
 ---
 
-<div class="container">
+<div class="container2">
     <div class="card slider"><Slider /></div>
     <div class="card card1">caja 1</div>
     <div class="card card2"><Card2 /></div>
@@ -14,7 +14,7 @@ import Card2 from "./Card2.astro";
 </div>
 
 <style>
-    .container {
+    .container2 {
   display: grid;
   grid-template-columns: repeat(minmax(6, 1fr)) 2fr;
   grid-template-rows: repeat(6, 4fr) repeat(2, 3fr);
@@ -68,7 +68,7 @@ import Card2 from "./Card2.astro";
 
 /* Pantalla 1440px */
 @media (max-width: 1440px) {
-  .container {
+  .container2 {
     grid-template-columns: repeat(6, 1fr); /* Ajustar según necesidades */
     grid-template-areas:
       "slider slider slider slider slider slider card1"
@@ -80,7 +80,7 @@ import Card2 from "./Card2.astro";
 
 /* Pantalla 1024px */
 @media (max-width: 1024px) {
-  .container {
+  .container2 {
     grid-template-columns: 2fr 2fr;
     grid-template-rows: auto auto auto;
     grid-template-areas:
@@ -93,7 +93,7 @@ import Card2 from "./Card2.astro";
 
 /* Pantalla 768px */
 @media (max-width: 768px) {
-  .container {
+  .container2 {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto auto;
     grid-template-areas:
@@ -110,7 +110,7 @@ import Card2 from "./Card2.astro";
 
 /* Pantalla 425px */
 @media (max-width: 425px) {
-  .container {
+  .container2 {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto auto;
     grid-template-areas:
@@ -127,7 +127,7 @@ import Card2 from "./Card2.astro";
 
 /* Pantalla 320px */
 @media (max-width: 320px) {
-  .container {
+  .container2 {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto auto;
     grid-template-areas:
