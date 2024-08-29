@@ -14,134 +14,133 @@ import Card2 from "./Card2.astro";
 </div>
 
 <style>
-    .container {
-  display: grid;
-  grid-template-columns: repeat(minmax(6, 1fr)) 2fr;
-  grid-template-rows: repeat(6, 4fr) repeat(2, 3fr);
-  gap: 8px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    "slider slider slider slider slider slider card1"
-    "slider slider slider slider slider slider card1"
-    "slider slider slider slider slider slider card1"
-    "slider slider slider slider slider slider card1"
-    "slider slider slider slider slider slider card1"
-    "slider slider slider slider slider slider card2"
-    "card3 card3 card4 card4 card5 card5 card6"
-    "card3 card3 card4 card4 card5 card5 card6";
-}
-
-.card {
-  border-radius: 8px;
-  background-color: aqua;
-  box-sizing: border-box;
-}
-
-.slider {
-  grid-area: slider;
-}
-
-.card1 {
-  grid-area: card1;
-}
-
-.card2 {  
-  grid-area: card2;
-}
-
-.card3 {
-  grid-area: card3;
-}
-
-.card4 {
-  grid-area: card4;
-}
-
-.card5 {
-  grid-area: card5;
-}
-
-.card6 {
-  grid-area: card6;
-}
-
-
-/* Pantalla 1440px */
-@media (max-width: 1440px) {
   .container {
-    grid-template-columns: repeat(6, 1fr); /* Ajustar según necesidades */
-    grid-template-areas:
-      "slider slider slider slider slider slider card1"
-      "slider slider slider slider slider slider card1"
-      "card2 card2 card2 card3 card4 card4"
-      "card2 card2 card2 card5 card5 card6";
-  }
-}
+      display: grid;
+      grid-template-columns: repeat(minmax(6, 1fr)) 2fr;
+      grid-template-rows: repeat(6, 4fr) repeat(2, 3fr);
+      gap: 8px;
+      grid-auto-flow: row;
+      grid-template-areas:
+        "slider slider slider slider slider slider card1"
+        "slider slider slider slider slider slider card1"
+        "slider slider slider slider slider slider card1"
+        "slider slider slider slider slider slider card1"
+        "slider slider slider slider slider slider card1"
+        "slider slider slider slider slider slider card2"
+        "card3 card3 card4 card4 card5 card5 card6"
+        "card3 card3 card4 card4 card5 card5 card6";
+    }
 
-/* Pantalla 1024px */
-@media (max-width: 1024px) {
-  .container {
-    grid-template-columns: 2fr 2fr;
-    grid-template-rows: auto auto auto;
-    grid-template-areas:
-      "slider slider"
-      "card1 card2"
-      "card3 card4"
-      "card5 card6";
-  }
-}
+    .card {
+      border-radius: 8px;
+      background-color: aqua;
+      box-sizing: border-box;
+    }
 
-/* Pantalla 768px */
-@media (max-width: 768px) {
-  .container {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto auto;
-    grid-template-areas:
-      "slider slider"
-      "card2 card2"
-      "card3 card4"
-      "card5 card6";
-  }
+    .slider {
+      grid-area: slider;
+    }
 
-  .card1 {
-    display: none; /* Oculta la card1 */
-  }
-}
+    .card1 {
+      grid-area: card1;
+    }
 
-/* Pantalla 425px */
-@media (max-width: 425px) {
-  .container {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto auto;
-    grid-template-areas:
-      "slider slider"
-      "card2 card2"
-      "card3 card4"
-      "card5 card6";
-  }
+    .card2 {  
+      grid-area: card2;
+    }
 
-  .card1 {
-    display: none; /* Oculta la card1 */
-  }
-}
+    .card3 {
+      grid-area: card3;
+    }
 
-/* Pantalla 320px */
-@media (max-width: 320px) {
-  .container {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto auto;
-    grid-template-areas:
-      "slider"
-      "card2"
-      "card3"
-      "card4"
-      "card5"
-      "card6";
-  }
+    .card4 {
+      grid-area: card4;
+    }
 
-  .card1 {
-    display: none; /* Oculta la card1 */
-  }
-}
+    .card5 {
+      grid-area: card5;
+    }
+
+    .card6 {
+      grid-area: card6;
+    }
+
+    /* Pantalla 1440px */
+    @media (max-width: 1440px) {
+      .container {
+        grid-template-columns: repeat(6, 1fr); /* Ajustar según necesidades */
+        grid-template-areas:
+          "slider slider slider slider slider slider card1"
+          "slider slider slider slider slider slider card1"
+          "card2 card2 card2 card3 card4 card4"
+          "card2 card2 card2 card5 card5 card6";
+      }
+    }
+
+    /* Pantalla 1024px */
+    @media (max-width: 1024px) {
+      .container {
+        grid-template-columns: 2fr 2fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas:
+          "slider slider"
+          "card1 card2"
+          "card3 card4"
+          "card5 card6";
+      }
+    }
+
+    /* Pantalla 768px */
+    @media (max-width: 768px) {
+      .container {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas:
+          "slider slider"
+          "card2 card2"
+          "card3 card4"
+          "card5 card6";
+      }
+
+      .card1 {
+        display: none; /* Oculta la card1 */
+      }
+    }
+
+    /* Pantalla 425px */
+    @media (max-width: 425px) {
+      .container {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas:
+          "slider slider"
+          "card2 card2"
+          "card3 card4"
+          "card5 card6";
+      }
+
+      .card1 {
+        display: none; /* Oculta la card1 */
+      }
+    }
+
+    /* Pantalla 320px */
+    @media (max-width: 320px) {
+      .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+        grid-template-areas:
+          "slider"
+          "card2"
+          "card3"
+          "card4"
+          "card5"
+          "card6";
+      }
+
+      .card1 {
+        display: none; /* Oculta la card1 */
+      }
+    }
 
 </style>
