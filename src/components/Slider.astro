@@ -2,6 +2,8 @@
 import NextIcon from "./icons/NextIcon.astro";
 import PreviewIcon from "./icons/PreviewIcon.astro";
 
+import {cn} from "../utils"
+
 const images = [
     {
         image: '/Slider/1.webp',
@@ -37,15 +39,24 @@ const images = [
     },
 ];
 
+interface Props {
+  imageClass?: string;
+  containerClass?: string
+  class?: string;
+
+}
+
+const { imageClass, class: className, containerClass } = Astro.props 
+
 --- 
 
 
-<div class="w-full relative slider rounded-2xl">
-    <div class="carousel rounded-box ">
+<div class={cn("w-full h-full relative slider rounded-2xl", containerClass)}>
+    <div class={cn("carousel w-full h-full rounded-box", className)}>
     {
         images.map(({ image, alt }, index) =>(
-        <div id={`item${index + 1}`} class="carousel-item w-full">
-            <img class="w-full object-cover select-none" src={ image } alt={ alt }/>
+        <div id={`item${index + 1}`} class={cn("carousel-item w-full h-full")}>
+            <img class={cn("w-full h-full object-cover select-none object-center", imageClass)} src={ image } alt={ alt }/>
         </div>
         ))
     }
@@ -58,7 +69,6 @@ const images = [
     <div class="dots">
   
         <a href="#item1" class="active"  ></a>
-    
         {
             images.slice(1, images.length ).map((_, index) =>(
 

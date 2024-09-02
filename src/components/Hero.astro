@@ -1,7 +1,7 @@
 ---
 import Card2 from "./Card2.astro";
-import Slider from "./Slider.astro";
 import Counter from "./Counter.astro";
+import Slider from "./Slider.astro";
 ---
 
 <!-- <div class="grid grid-cols-4 md:grid-cols-4 grid-rows-5 md:grid-rows-3 gap-2 md:gap-4 m-4">
@@ -14,8 +14,10 @@ import Counter from "./Counter.astro";
   <div class="col-start-3 row-start-5 col-span-2 md:col-start-4 md:row-start-2 md:col-span-1 md:row-span-2 bg-green-500 sm:bg-red-500 md:bg-blue-500 lg:bg-amber-500 xl:bg-violet-500 rounded-md">6</div>
 </div> -->
 
-<div class="grid grid-cols-3 md:grid-cols-6 grid-rows-5 md:grid-rows-4 gap-2 md:gap-2 m-4">
-  <div class="col-start-1 row-start-1 col-span-3 row-span-2 md:col-start-1 md:row-start-1 md:col-span-6 md:row-span-3 rounded-md"><Slider /></div>
+<div class="grid grid-cols-3 md:grid-cols-6 grid-rows-5 md:grid-rows-4 gap-2 md:gap-2 m-4 h-screen">
+  <div class="col-start-1 row-start-1 col-span-3 row-span-2 md:col-start-1 md:row-start-1 md:col-span-6 md:row-span-3 rounded-md overflow-hidden">
+    <Slider imageClass="" />
+  </div>
   <div class="card-glass col-start-1 row-start-3 col-span-3 md:col-start-1 md:row-start-4 md:col-span-2 md:row-span-1 rounded-md flex justify-center items-center h-44"><Counter /></div>
   <div class="card-glass col-start-1 row-start-4 col-span-3 md:col-start-3 md:row-start-4 md:col-span-2 md:row-span-1 rounded-md flex justify-center items-center h-44"><Card2 /></div>
   <div class="card-glass col-start-1 row-start-5 col-span-3 md:col-start-5 md:row-start-4 md:col-span-2 md:row-span-1 rounded-md flex justify-center items-center h-44">3</div>
