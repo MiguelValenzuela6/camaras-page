@@ -12,7 +12,27 @@ const images = [
         alt: 'image'
     },
     {
-        image: 'https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/f21f09cc-465e-4c22-a2ce-c85c40f3be05/original=true,quality=90/26201104.jpeg',
+        image: '/Slider/3.webp',
+        alt: 'image'
+    },
+    {
+        image: '/Slider/4.webp',
+        alt: 'image'
+    },
+    {
+        image: '/Slider/5.webp',
+        alt: 'image'
+    },
+    {
+        image: '/Slider/6.webp',
+        alt: 'image'
+    },
+    {
+        image: '/Slider/7.webp',
+        alt: 'image'
+    },
+    {
+        image: '/Slider/8.webp',
         alt: 'image'
     },
 ];
@@ -20,7 +40,7 @@ const images = [
 --- 
 
 
-<div class="w-full relative slider">
+<div class="w-full relative slider rounded-2xl">
     <div class="carousel rounded-box ">
     {
         images.map(({ image, alt }, index) =>(
@@ -130,8 +150,6 @@ const images = [
 
 /* Pantalla 1024px */
 @media (max-width: 1024px) {
- 
-
     .slider .buttons button {
         width: 35px;
         height: 35px;

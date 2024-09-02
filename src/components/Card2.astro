@@ -1,13 +1,46 @@
 ---
+import Tiktok from "./icons/Tiktok.astro";
+import Instagram from "./icons/Instagram.astro";
+import Facebook from "./icons/Facebook.astro";
+import Discord from "./icons/Discord.astro";
+
 const media = {
-    ig: "",
-    tiktok: "",
-    fb: "",
+    instagram: "https://www.instagram.com/lascamarasdeldragon/",
+    tiktok: "https://www.tiktok.com/@lascamarasdeldragon",
+    facebook: "https://www.facebook.com/profile.php?id=61556552432006",
+    discord: ""
 }
 ---
 
-<section>
-    <div class="text-xl flex justify-center">
-        hola mundodsadsadsadasdsadsadsasadsadsadsadsadsadsadsaassadas
+<section class="">
+    <div class="flex flex-col justify-center items-center lg:text-4xl lg:gap-8 gap-4">
+        <p class="fix-text lg:text-4xl text-2xl font-semibold">¡Siguenos!</p>
+        <div class="social-media flex justify-center gap-3 size-6">
+            <a href={ media.instagram }><Instagram /></a>
+            <a href={ media.tiktok }><Tiktok /></a>
+            <a href={ media.facebook }><Facebook /></a>
+            <a href={ media.discord }><Discord /></a>
+        </div>
     </div>
 </section>
+
+
+<style>
+    .fix-text {
+    display: -webkit-box; /* Utiliza este modelo de caja */
+    -webkit-box-orient: vertical; /* Establece la orientación de las líneas */
+    overflow: hidden; /* Esconde el texto que excede */
+    text-overflow: ellipsis; /* Opcional: agrega "..." si el texto es muy largo */
+    -webkit-line-clamp: 4; /* Limita el número de líneas a 3 */
+    word-wrap: break-word;
+    box-sizing: border-box;
+  }
+
+  a {
+    transition: transform 0.3s ease;
+  }
+  a:hover {
+    transform: scale(1.1); /* Pequeña escala */
+  }
+
+</style>

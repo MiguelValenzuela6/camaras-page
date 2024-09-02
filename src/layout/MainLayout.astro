@@ -18,7 +18,7 @@ const { title, description } = Astro.props;
 	<head>
 		<meta charset="utf-8" />
         <meta name="description" content={ description } />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="/camera.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{ title }</title>
@@ -26,10 +26,7 @@ const { title, description } = Astro.props;
 	</head>
 	<body>
         <div class="fixed left-0 top-0 -z-10 h-full w-full"><div class="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div></div>
-		
-        <h1 class="text-5xl">Astro</h1>
-
-
+        <span class="p-5"> </span>
         <!-- Componentes -->
          <Header />
          <slot />

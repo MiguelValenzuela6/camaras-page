@@ -1,0 +1,72 @@
+---
+
+---
+
+<div class="counter-box">
+    <div id="header" class="font-semibold">Faltan</div>
+    <div id="countdown">
+        <div class="time-unit">
+            <span class="number font-semibold sm:text-5xl md:text-5xl" id="days">00</span>
+            <span class="label">días</span>
+        </div>
+        <div class="time-unit">
+            <span class="number" id="hours">00</span>
+            <span class="label">horas</span>
+        </div>
+        <div class="time-unit">
+            <span class="number" id="minutes">00</span>
+            <span class="label">minutos</span>
+        </div>
+        <div class="time-unit">
+            <span class="number" id="seconds">00</span>
+            <span class="label">segundos</span>
+        </div>
+    </div>
+    <div id="finished">Se terminó el tiempo</div>
+</div>
+
+
+<style>
+    .counter-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #header {
+        font-size: 2rem;
+    }
+    #countdown {
+        display: flex;
+        text-align: center;
+        gap: 12px;
+    }
+    .time-unit {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+    }
+    /* .number {
+        font-size: 3rem;
+        font-weight: bold;
+    } */
+    .label {
+        text-transform: uppercase;
+    }
+    #finished {
+        display: none;
+        font-size: 3rem;
+        text-align: center;
+    }
+    @keyframes neon {
+        0%, 100% {
+            text-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px #fff, 0 0 8px #0080ff, 0 0 14px #0080ff, 0 0 16px #0080ff, 0 0 20px #0080ff, 0 0 30px #0080ff;
+        }
+        50% {
+            text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #fff, 0 0 4px #0080ff, 0 0 7px #0080ff, 0 0 8px #0080ff, 0 0 10px #0080ff, 0 0 15px #0080ff;
+        }
+    }
+
+</style>
+
+<script src="../js/timer.js"></script>
