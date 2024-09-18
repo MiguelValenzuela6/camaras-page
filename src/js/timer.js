@@ -5,7 +5,7 @@ const secondsEl = document.getElementById("seconds");
 const countdownElement = document.getElementById("countdown");
 const finishedElement = document.getElementById("finished");
 const headerElement = document.getElementById("header");
-const endDate = new Date("October 10, 2024 08:00:00").getTime();
+const endDate = new Date("October 10, 2024 13:07:00").getTime();
 
 function updateCountdown() {
   const now = new Date().getTime();

@@ -1,0 +1,18 @@
+---
+import Agenda from "./icons/Agenda.astro"
+
+const AGENDA = {
+    link: "https://forms.gle/R1V5JdhXKHb5pr3C7"
+}
+
+---
+
+<section>
+    <div class="flex flex-col gap-2 justify-center items-center">
+        <div class="title"><p>¡Agenda tu sesión aquí!</p></div>
+        <div class="icon">
+            <a href={ AGENDA.link }><Agenda /></a>
+        </div>
+        <div class="description"><p>Aplican TyC</p></div>
+    </div>
+</section>

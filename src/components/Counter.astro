@@ -1,72 +1,45 @@
 ---
 
 ---
-
-<div class="counter-box">
-    <div id="header" class="font-semibold">Faltan</div>
-    <div id="countdown">
-        <div class="time-unit">
-            <span class="number font-semibold sm:text-5xl md:text-5xl" id="days">00</span>
-            <span class="label">días</span>
+<div class="counter-box flex flex-col mx-auto text-center">
+    <div id="header" class="text-4xl sm:text-5xl md:text-6xl font-bold">Faltan</div>
+    <div id="countdown" class="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8 lg:gap-10">
+        <div class="time-unit flex flex-col items-center">
+            <span class="number font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl" id="days">00</span>
+            <span class="label text-sm sm:text-base md:text-lg lg:text-xl">días</span>
         </div>
-        <div class="time-unit">
-            <span class="number" id="hours">00</span>
-            <span class="label">horas</span>
+        <div class="time-unit flex flex-col items-center">
+            <span class="number font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl" id="hours">00</span>
+            <span class="label text-sm sm:text-base md:text-lg lg:text-xl">horas</span>
         </div>
-        <div class="time-unit">
-            <span class="number" id="minutes">00</span>
-            <span class="label">minutos</span>
+        <div class="time-unit flex flex-col items-center">
+            <span class="number font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl" id="minutes">00</span>
+            <span class="label text-sm sm:text-base md:text-lg lg:text-xl">minutos</span>
         </div>
-        <div class="time-unit">
-            <span class="number" id="seconds">00</span>
-            <span class="label">segundos</span>
+        <div class="time-unit flex flex-col items-center">
+            <span class="number font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl" id="seconds">00</span>
+            <span class="label text-sm sm:text-base md:text-lg lg:text-xl">segundos</span>
         </div>
     </div>
-    <div id="finished">Se terminó el tiempo</div>
+    <div id="finished" class="hidden text-4xl sm:text-5xl md:text-6xl font-bold neon-text">
+        Se acabó el tiempo
+    </div>
 </div>
 
-
 <style>
-    .counter-box {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    #header {
-        font-size: 2rem;
-    }
-    #countdown {
-        display: flex;
-        text-align: center;
-        gap: 12px;
-    }
-    .time-unit {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 4px;
-    }
-    /* .number {
-        font-size: 3rem;
-        font-weight: bold;
-    } */
-    .label {
-        text-transform: uppercase;
-    }
-    #finished {
-        display: none;
-        font-size: 3rem;
-        text-align: center;
-    }
-    @keyframes neon {
-        0%, 100% {
-            text-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px #fff, 0 0 8px #0080ff, 0 0 14px #0080ff, 0 0 16px #0080ff, 0 0 20px #0080ff, 0 0 30px #0080ff;
-        }
-        50% {
-            text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #fff, 0 0 4px #0080ff, 0 0 7px #0080ff, 0 0 8px #0080ff, 0 0 10px #0080ff, 0 0 15px #0080ff;
-        }
-    }
+   @keyframes neon {
+  0% {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff, 0 0 70px #ff00ff;
+  }
+  100% {
+    text-shadow: 0 0 10px #fff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff, 0 0 70px #ff00ff, 0 0 80px #ff00ff;
+  }
+}
 
+.neon-text {
+  color: #fff;
+  animation: neon 1.5s ease-in-out infinite alternate;
+}
 </style>
 
 <script src="../js/timer.js"></script>
