@@ -1,16 +1,49 @@
 ---
 import MainLayout from "../layout/MainLayout.astro";
-import Slider from "../components/Slider.astro";
 import Team from "../components/Team.astro";
 import Hero from "../components/Hero.astro";
 import WeAreSection from "../components/WeAreSection.astro";
-
+import SectionContainer from "../components/SectionContainer.astro";
+import World from "../components/icons/World.astro";
+import UsersIcon from "../components/icons/UsersIcon.astro";
+import PhotoIcon from "../components/icons/PhotoIcon.astro";
 ---
 
 <MainLayout
 	title="Las Cámaras del Dragon"
 	description="Bienvenido al mundo mágico de Las Cámaras del Dragón">
 
-	<WeAreSection />
+	<SectionContainer id="inicio" class="py-1">
+		<Hero />
+	</SectionContainer>
+
+	<SectionContainer id="fotografos" class="py-10">
+		<h2
+        class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
+      >
+		<UsersIcon class="size-8"/>
+		Fotógrafos
+		</h2>
+		<Team />
+	</SectionContainer>
+
+	<SectionContainer id="somos" class="py-10">
+		<h2
+        class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
+      >
+		<World class="size-8"/>
+		Somos
+		</h2>
+		<WeAreSection />
+	</SectionContainer>
+
+	<SectionContainer id="galeria" class="py-10">
+		<h2
+        class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
+      >
+	  <PhotoIcon class="size-8"/>
+		Galeria
+		</h2>
+	</SectionContainer>
 
 </MainLayout>
