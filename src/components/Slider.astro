@@ -63,17 +63,17 @@ const { imageClass, class: className, containerClass } = Astro.props
         <button id="prev"><PreviewIcon /></button>
         <button id="next"><NextIcon /></button>
     </div>
-    <div class="dots">
+    <ul class="dots">
   
-        <a href="#item1" class="active"  ></a>
+        <li  class="active"  ></li>
         {
             images.slice(1, images.length ).map((_, index) =>(
 
-                <a href={`#item${index + 2}`} ></a>
+                <li ></li>
      
             ))
         }
-    </div>
+    </>
 </div>
 
 <style>
@@ -139,7 +139,7 @@ const { imageClass, class: className, containerClass } = Astro.props
         display: flex;
         justify-content: center;
     }
-    .slider .dots a{
+    .slider .dots li{
         cursor: pointer;
         list-style: none;
         width: 10px;
@@ -149,7 +149,7 @@ const { imageClass, class: className, containerClass } = Astro.props
         border-radius: 20px;
         transition: 0.5s;
     }
-    .slider .dots a.active{
+    .slider .dots li.active{
         width: 30px;
     }
 
@@ -162,13 +162,13 @@ const { imageClass, class: className, containerClass } = Astro.props
         height: 35px;
     }
 
-    .slider .dots a {
+    .slider .dots li {
         width: 8px;
         height: 8px;
         margin: 8px;
     }
 
-    .slider .dots a.active {
+    .slider .dots li.active {
         width: 25px;
     }
 }
@@ -180,13 +180,13 @@ const { imageClass, class: className, containerClass } = Astro.props
         height: 30px;
     }
 
-    .slider .dots a {
+    .slider .dots li {
         width: 7px;
         height: 7px;
         margin: 7px;
     }
 
-    .slider .dots a.active {
+    .slider .dots li.active {
         width: 20px;
     }
 }
@@ -200,13 +200,13 @@ const { imageClass, class: className, containerClass } = Astro.props
         height: 25px;
     }
 
-    .slider .dots a {
+    .slider .dots li {
         width: 6px;
         height: 6px;
         margin: 5px;
     }
 
-    .slider .dots a.active {
+    .slider .dots li.active {
         width: 15px;
     }
 }
@@ -220,13 +220,13 @@ const { imageClass, class: className, containerClass } = Astro.props
         height: 20px;
     }
 
-    .slider .dots a {
+    .slider .dots li {
         width: 5px;
         height: 5px;
         margin: 4px;
     }
 
-    .slider .dots a.active {
+    .slider .dots li.active {
         width: 12px;
     }
 }

@@ -2,7 +2,7 @@ const slider = document.querySelector(".slider .carousel");
 const items = document.querySelectorAll(".slider .carousel .carousel-item");
 const next = document.getElementById("next");
 const prev = document.getElementById("prev");
-const dots = document.querySelectorAll(".slider .dots a");
+const dots = document.querySelectorAll(".slider .dots li");
 
 const lengthItems = items.length - 1;
 let active = 0;
@@ -42,7 +42,7 @@ let refreshInterval = setInterval(() => {
 }, 3000);
 
 function reloadSlider() {
-	const last_active_dot = document.querySelector(".slider .dots a.active");
+	const last_active_dot = document.querySelector(".slider .dots li.active");
 	last_active_dot.classList.remove("active");
 	dots[active].classList.add("active");
 
