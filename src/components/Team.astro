@@ -1,5 +1,4 @@
 ---
-import Badge from './Badge.astro';
 import Instagram from './icons/Instagram.astro';
 
 type TEAM = {
@@ -51,7 +50,7 @@ const team: TEAM[] = [
 <section style="grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr))" class="grid gap-8 justify-center items-center container mx-auto px-5">
     {
         team.map(({ name, charge, image, description, link }) => (
-            <article  style={`--bg-image: url('${image}')`} class={`profile-container  before:bg-cover before:bg-no-repeat before:bg-center mx-auto`}>
+            <article  style={`--bg-image: url('${image}')`} class={`profile-container before:bg-cover before:bg-no-repeat before:bg-center mx-auto`}>
                 <div class="profile-wrapper">
                     <div class="profile-card">
     

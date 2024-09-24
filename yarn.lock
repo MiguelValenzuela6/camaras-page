@@ -483,6 +483,11 @@
   resolved "https://registry.yarnpkg.com/@fontsource-variable/raleway/-/raleway-5.0.21.tgz#6b91c6de3328608c7c0d2b2a913734dddc7047d7"
   integrity sha512-k0iaMLLIQ/LazTJdKX5L2VDnHAZPGx1TKT2o3x0HPnyWlF2DvXNvuoQIGUR5GsltBGLhvv/DxBJMfAWfqv5/3w==
 
+"@formkit/tempo@^0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@formkit/tempo/-/tempo-0.1.2.tgz#85ff615dddc6cc55ab9f9ca83cf9a41cfdf778fc"
+  integrity sha512-jNPPbjL8oj7hK3eHX++CwbR6X4GKQt+x00/q4yeXkwynXHGKL27dylYhpEgwrmediPP4y7s0XtN1if/M/JYujg==
+
 "@img/sharp-darwin-arm64@0.33.5":
   version "0.33.5"
   resolved "https://registry.yarnpkg.com/@img/sharp-darwin-arm64/-/sharp-darwin-arm64-0.33.5.tgz#ef5b5a07862805f1e8145a377c8ba6e98813ca08"
