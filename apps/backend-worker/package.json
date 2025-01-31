@@ -3,11 +3,11 @@
   "version": "1.0.50",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "bun run --watch src/index.ts",
+    "dev": "bun --env-file=../../.env.local run --watch src/index.ts",
     "check-types": "tsc --noEmit"
   },
   "dependencies": {
-    "elysia": "latest"
+    "elysia": "1.2.10"
   },
   "devDependencies": {
     "bun-types": "latest"

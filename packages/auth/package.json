@@ -1,0 +1,17 @@
+{
+  "name": "@camaras/auth",
+  "module": "index.ts",
+  "type": "module",
+  "scripts": {
+    "generate": "bunx @better-auth/cli@latest generate --output ./../../packages/database/prisma/schema/schema.prisma -y"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "better-auth": "^1.1.14"
+  }
+}

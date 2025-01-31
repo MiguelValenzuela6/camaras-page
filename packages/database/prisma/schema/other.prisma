@@ -1,0 +1,94 @@
+model Sale {
+  id             String        @id @default(uuid())
+  package        PhotoPackage  @relation(fields: [packageId], references: [id])
+  packageId      String
+  buyer          User          @relation("Buyer", fields: [buyerId], references: [id])
+  buyerId        String
+  saleDate       DateTime      @default(now())
+  amount         Decimal
+  photographer   User          @relation("Photographer", fields: [photographerId], references: [id])
+  photographerId String
+  trackingCode   String?
+  discountCode   DiscountCode? @relation(fields: [discountCodeId], references: [id])
+  discountCodeId String?
+  User           User?         @relation(fields: [userId], references: [id])
+  userId         String?
+}
+
+model PhotoPackage {
+  id                 String      @id @default(uuid())
+  photographer       User        @relation(fields: [photographerId], references: [id])
+  photographerId     String
+  name               String
+  description        String?
+  price              Decimal
+  photoCount         Int         @default(0)
+  discountPercentage Decimal     @default(0)
+  sales              Sale[]
+  reviews            Review[]
+  Favorite           Favorite[]
+  ChangeLog          ChangeLog[]
+}
+
+model Review {
+  id        String       @id @default(uuid())
+  user      User         @relation(fields: [userId], references: [id])
+  userId    String
+  package   PhotoPackage @relation(fields: [packageId], references: [id])
+  packageId String
+  rating    Int
+  comment   String?
+  createdAt DateTime     @default(now())
+}
+
+model DiscountCode {
+  id                 String            @id @default(uuid())
+  code               String            @unique
+  discountPercentage Decimal
+  expirationDate     DateTime?
+  isActive           Boolean           @default(true)
+  sales              Sale[]
+  history            DiscountHistory[]
+}
+
+model DiscountHistory {
+  id             String       @id @default(uuid())
+  discountCode   DiscountCode @relation(fields: [discountCodeId], references: [id])
+  discountCodeId String
+  user           User         @relation(fields: [userId], references: [id])
+  userId         String
+  usedAt         DateTime     @default(now())
+  amountSaved    Decimal
+}
+
+model Favorite {
+  user      User         @relation(fields: [userId], references: [id])
+  userId    String
+  package   PhotoPackage @relation(fields: [packageId], references: [id])
+  packageId String
+
+  @@id([userId, packageId])
+}
+
+model ChangeLog {
+  id          String       @id @default(uuid())
+  package     PhotoPackage @relation(fields: [packageId], references: [id])
+  packageId   String
+  changedBy   User         @relation(fields: [changedById], references: [id])
+  changedById String
+  changeType  String
+  oldValue    String?
+  newValue    String?
+  timestamp   DateTime     @default(now())
+}
+
+model TransactionLogs {
+  id         String  @id @default(uuid())
+  from       String
+  to         String
+  amount     Decimal
+  userToId   String
+  userTo     User    @relation("userTo", fields: [userToId], references: [id])
+  userFromId String
+  userFrom   User    @relation("userFrom", fields: [userFromId], references: [id])
+}
