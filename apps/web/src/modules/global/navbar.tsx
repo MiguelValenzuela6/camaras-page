@@ -292,7 +292,7 @@ export function Navbar() {
 
               {/* Mobile Links */}
               <div className="flex-1 flex flex-col justify-center px-6">
-      , ca          <motion.ul 
+              <motion.ul 
                   className="space-y-8"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}

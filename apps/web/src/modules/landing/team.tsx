@@ -114,7 +114,7 @@ export function TeamSection() {
   return (
     <>
       <div className="px-4 sm:px-10 lg:px-24 py-12 sm:py-20">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-9xl mx-auto ">
           {/* Texto animado grande y responsivo */}
           <div className="flex items-center justify-center min-h-[300px] sm:min-h-[400px] lg:min-h-[500px] mb-16 sm:mb-24">
             <div className="px-4 p-8 sm:p-14 md:p-20 w-full max-w-5xl flex items-center justify-center">
@@ -147,7 +147,7 @@ export function TeamSection() {
               variants={cardsVariants}
               initial="hidden"
               animate="visible"
-              className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-x-16 gap-y-16"
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-8 gap-y-12 sm:gap-x-12 sm:gap-y-16 lg:gap-x-8 lg:gap-y-12 xl:gap-x-12 xl:gap-y-16"
             >
               {cards.map((card, index) => (
                 <Card key={index} card={card} variants={cardVariants} />
@@ -195,7 +195,7 @@ function Card({ card, variants }: { card: any; variants: any }) {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <div className="relative h-72 sm:h-80 md:h-96 lg:h-[24rem] overflow-hidden">
+      <div className="relative h-80 sm:h-96 md:h-[28rem] lg:h-[32rem] xl:h-[36rem] overflow-hidden">
         <motion.img
           key={currentImageIndex}
           src={card.images[currentImageIndex]}
@@ -206,13 +206,29 @@ function Card({ card, variants }: { card: any; variants: any }) {
           transition={{ duration: 0.3 }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-        <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4">
-          <h3 className="text-lg sm:text-xl font-bold text-white mb-1 drop-shadow-lg leading-tight">
+        <div className="absolute bottom-4 sm:bottom-6 lg:bottom-8 left-4 sm:left-6 lg:left-8 right-4 sm:right-6 lg:right-8">
+          <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-2 drop-shadow-lg leading-tight">
             {card.title}
           </h3>
-          <p className="text-white/90 text-sm sm:text-base drop-shadow-md leading-tight">
+          <p className="text-white/90 text-base sm:text-lg lg:text-xl drop-shadow-md leading-tight mb-6">
             {card.subtitle}
           </p>
+
+          {/* Botones */}
+          <div className="flex flex-row gap-3">
+            <button
+              type="button"
+              className="px-4 sm:px-6 py-2 sm:py-3 rounded-lg bg-white/20 text-white text-sm sm:text-base font-medium hover:bg-white/30 transition-colors backdrop-blur-sm flex-1"
+            >
+              ACERCA DE MI
+            </button>
+            <button
+              type="button"
+              className="px-4 sm:px-6 py-2 sm:py-3 rounded-lg bg-[#00FFF0] text-black text-sm sm:text-base font-medium hover:bg-[#00FFF0]/90 transition-colors flex-1"
+            >
+              AGENDA CONMIGO
+            </button>
+          </div>
         </div>
       </div>
     </motion.div>

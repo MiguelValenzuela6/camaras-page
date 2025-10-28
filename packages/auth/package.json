@@ -12,6 +12,7 @@
     "typescript": "5.5.4"
   },
   "dependencies": {
-    "better-auth": "^1.2.7"
+    "better-auth": "^1.2.7",
+    "twilio": "catalog:backend"
   }
 }
