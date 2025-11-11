@@ -27,6 +27,7 @@
     "elysia": "1.2.25",
     "postcss": "^8",
     "tailwindcss": "^4.1.4",
-    "typescript": "5.5.4"
+    "typescript": "5.5.4",
+    "zustand": "^5.0.4"
   }
 }
