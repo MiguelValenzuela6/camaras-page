@@ -42,6 +42,8 @@ export function ResponsiveUpdateUser() {
           <DialogTitle className="text-center">Información General del Usuario</DialogTitle>
         </DialogHeader>
         <UserInfoCard
+          onSave={() => {}}
+          onCancel={() => {}}
           user ={{
             name: "John Doe",
             phoneNumber: "+123456789",
@@ -67,6 +69,8 @@ export function ResponsiveUpdateUser() {
           </DrawerHeader>
           <div className="mt-4 overflow-y-auto max-h-[calc(100vh-450px)] px-2 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']">
           <UserInfoCard
+          onSave={() => {}}
+          onCancel={() => {}}
           user={{
             name: "John Doe",
             phoneNumber: "+123456789",

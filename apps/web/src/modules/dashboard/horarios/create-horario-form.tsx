@@ -65,7 +65,7 @@ export function CreateHorarioForm() {
 
   // Utilidad para convertir a formato 24h
   const to24Hour = (hour: string, minute: string, period: string) => {
-    let h = parseInt(hour, 10);
+    let h = Number.parseInt(hour, 10);
     if (period === "PM" && h !== 12) h += 12;
     if (period === "AM" && h === 12) h = 0;
     return `${String(h).padStart(2, "0")}:${minute}`;
@@ -74,12 +74,12 @@ export function CreateHorarioForm() {
   // Utilidad para convertir de 24h a 12h
   const to12Hour = (time24: string) => {
     const [hours, minutes] = time24.split(':');
-    let hour = parseInt(hours, 10);
+    let hour = Number.parseInt(hours, 10);
     const period = hour >= 12 ? 'PM' : 'AM';
-    
+
     if (hour === 0) hour = 12;
     else if (hour > 12) hour -= 12;
-    
+
     return `${String(hour).padStart(2, '0')}:${minutes} ${period}`;
   };
 
@@ -137,19 +137,22 @@ export function CreateHorarioForm() {
     try {
       setIsLoading(true);
 
-      // Crear todos los horarios
-      for (const horario of horarios) {
+      // Preparar todos los horarios como array
+      const timeSlots = horarios.map(horario => {
         const startTime = to24Hour(horario.startHour, horario.startMinute, horario.startPeriod);
         const endTime = to24Hour(horario.endHour, horario.endMinute, horario.endPeriod);
 
-        await TimeService.create({
+        return {
           startTime,
           endTime,
           ampmStart: horario.startPeriod,
           ampmEnd: horario.endPeriod,
           availableDayId: id as string,
-        });
-      }
+        };
+      });
+
+      // Crear todos los horarios de una vez
+      await TimeService.create(timeSlots);
 
       await refetch();
       setHorarios([]);
@@ -351,7 +354,7 @@ export function CreateHorarioForm() {
                 const startTime = to24Hour(horario.startHour, horario.startMinute, horario.startPeriod);
                 const endTime = to24Hour(horario.endHour, horario.endMinute, horario.endPeriod);
                 const display = `${to12Hour(startTime)} - ${to12Hour(endTime)}`;
-                
+
                 return (
                   <div key={index} className="flex items-center justify-between bg-white p-3 rounded border">
                     <span>{display}</span>

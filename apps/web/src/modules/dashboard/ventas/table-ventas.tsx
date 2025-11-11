@@ -21,12 +21,12 @@ import {
   SheetTitle,
   SheetDescription,
 } from "@camaras/ui/src/components/sheet";
-import { useSalesPhotographer } from "@/hooks/use-sale";
+import { useSales } from "@/hooks/use-sale";
 import { Eye, Loader2, Trash2Icon } from "lucide-react";
 import { Button } from "@camaras/ui/src/components/button";
 import { useState } from "react";
 import { SaleService } from "@/services/sale-service";
-import { SheetSaleDetails } from "./sheet-sale-details";
+import { VentasDetalles } from "./ventas-detalles";
 import {
   AlertDialog,
   AlertDialogContent,
@@ -41,7 +41,7 @@ import {
 import { formatCurrency } from "@/utils/format-currency";
 
 export const TableVentas = () => {
-  const { data, isLoading, isError, refetch } = useSalesPhotographer();
+  const { data, isLoading, isError, refetch } = useSales();
   const [selectedSale, setSelectedSale] = useState<string | null>(null);
   const [openSheet, setOpenSheet] = useState(false);
   const [openDeleteDialog, setOpenDeleteDialog] = useState(false);
@@ -90,7 +90,7 @@ export const TableVentas = () => {
             sales.map((sale) => (
               <TableRow key={sale.id}>
                 <TableCell className="text-left">
-                  {sale.id.slice(0, 8) + "..."}
+                  {sale.id.slice(0, 8)}...
                 </TableCell>
                 <TableCell className="text-center">{sale.buyerName}</TableCell>
                 <TableCell className="text-center">{sale.status}</TableCell>
@@ -138,7 +138,7 @@ export const TableVentas = () => {
             </SheetDescription>
           </SheetHeader>
 
-          {selectedSale && <SheetSaleDetails saleId={selectedSale} />}
+          {selectedSale && <VentasDetalles saleId={selectedSale} buyerName={selectedSale} />}
         </SheetContent>
       </Sheet>
 

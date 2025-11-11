@@ -28,7 +28,7 @@ export function TablePaquetes() {
   return (
     <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-4 auto-rows-fr">
       {packages.map((pack) => (
-        <PaqueteCard pack={pack} key={pack.id} />
+        <PaqueteCard pack={{ ...pack, photographerName: pack.photographerId || "" }} key={pack.id} />
       ))}
     </div>
 

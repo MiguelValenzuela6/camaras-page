@@ -61,7 +61,7 @@ export function UpdateHorarioForm({ horario }: { horario: Horario }) {
     })
 
     const to24Hour = (hour: string, minute: string, period: string) => {
-        let h = parseInt(hour, 10);
+        let h = Number.parseInt(hour, 10);
         if (period === "PM" && h !== 12) h += 12;
         if (period === "AM" && h === 12) h = 0;
         return `${String(h).padStart(2, "0")}:${minute}`;
@@ -84,13 +84,14 @@ export function UpdateHorarioForm({ horario }: { horario: Horario }) {
                 return;
             }
 
-            await TimeService.update(horario.id, {
+            await TimeService.update([{
+                id: horario.id,
                 startTime,
                 endTime,
                 ampmStart: values.startPeriod,
                 ampmEnd: values.endPeriod,
                 availableDayId: id as string,
-            });
+            }]);
 
             await refetch();
             toast.success("Horario actualizado exitosamente");
@@ -116,7 +117,10 @@ export function UpdateHorarioForm({ horario }: { horario: Horario }) {
                                 maxLength={2}
                                 placeholder="00"
                                 className="w-[50px]"
-                            />
+                            >
+                                <InputOTPSlot index={0} />
+                                <InputOTPSlot index={1} />
+                            </InputOTP>
                             <FormMessage />
                         </FormItem>
                     )}
@@ -133,7 +137,10 @@ export function UpdateHorarioForm({ horario }: { horario: Horario }) {
                                 maxLength={2}
                                 placeholder="00"
                                 className="w-[50px]"
-                                />
+                            >
+                                <InputOTPSlot index={0} />
+                                <InputOTPSlot index={1} />
+                            </InputOTP>
                                 <FormMessage />
                         </FormItem>
                     )}
@@ -174,7 +181,10 @@ export function UpdateHorarioForm({ horario }: { horario: Horario }) {
                                 maxLength={2}
                                 placeholder="00"
                                 className="w-[50px]"
-                            />
+                            >
+                                <InputOTPSlot index={0} />
+                                <InputOTPSlot index={1} />
+                            </InputOTP>
                             <FormMessage />
                         </FormItem>
                     )}
@@ -191,7 +201,10 @@ export function UpdateHorarioForm({ horario }: { horario: Horario }) {
                                 maxLength={2}
                                 placeholder="00"
                                 className="w-[50px]"
-                            />
+                            >
+                                <InputOTPSlot index={0} />
+                                <InputOTPSlot index={1} />
+                            </InputOTP>
                             <FormMessage />
                         </FormItem>
                     )}

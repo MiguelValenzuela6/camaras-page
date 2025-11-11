@@ -34,8 +34,8 @@ export function SelectPaymentMethod() {
         </CardHeader>
       </Card>
       <Card
-        onClick={() => handleSelectPaymentMethod(PaymentMethod.CREDIT_CARD)}
-        className={`flex items-center gap-2 py-4 rounded-xl overflow-hidden transition-all hover:shadow-xl cursor-pointer ${methodPayment === PaymentMethod.CREDIT_CARD ? "border-2 border-primary-blue" : "border-2"}`}
+        onClick={() => handleSelectPaymentMethod(PaymentMethod.NEQUI)}
+        className={`flex items-center gap-2 py-4 rounded-xl overflow-hidden transition-all hover:shadow-xl cursor-pointer ${methodPayment === PaymentMethod.NEQUI ? "border-2 border-primary-blue" : "border-2"}`}
       >
         <CardHeader className="w-full">
           <CardTitle className="flex items-center gap-2">
