@@ -19,7 +19,7 @@ import { useState } from "react";
 import { toast } from "sonner";
 import { useCoupons } from "@/hooks/use-cupons";
 
-export function AlertDeteleUser({ id, code }: { id: string; code: string }) {
+export function AlertDeteleUser({ id, name }: { id: string; name: string }) {
   const [isLoading, setIsLoading] = useState(false);
   const { refetch } = useCoupons();
 
@@ -52,7 +52,7 @@ export function AlertDeteleUser({ id, code }: { id: string; code: string }) {
       <AlertDialogContent>
         <AlertDialogHeader>
           <AlertDialogTitle>
-            ¿Estas seguro de querer eliminar a este usuario{code}?
+            ¿Estas seguro de querer eliminar a este usuario{name}?
           </AlertDialogTitle>
           <AlertDialogDescription>
             Esta acción no puede ser revertida. Por favor ten cuidado en cual

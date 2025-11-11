@@ -76,7 +76,7 @@ export const TableUsers = () => {
               </TableCell>
 
               <TableCell className="space-x-2">
-                <ResponsiveUpdateUser user={user} />
+                <ResponsiveUpdateUser />
                 <AlertDeteleUser id={user.id} name={user.name} />
               </TableCell>
             </TableRow>

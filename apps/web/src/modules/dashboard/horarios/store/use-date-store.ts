@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { SessionsService } from "@/services/day-service";
+import { DaysService } from "@/services/day-service";
 
 interface TimeSlot {
   id: string;
@@ -129,20 +129,12 @@ export const useAvailabilityStore = create<AvailabilityState>((set, get) => ({
         }));
         
         if (day.timeSlots.length > 0) {
-          await SessionsService.update(dayId, { timeSlots });
+          await DaysService.delete(dayId);
         } else {
-          await SessionsService.create({
-            date: day.date,
-            timeSlots
-          });
+          await DaysService.create(day.date);
         }
-        
-        set({ loading: false });
       } catch (error) {
-        set({ 
-          loading: false,
-          error: 'Error al guardar los cambios' 
-        });
+        set({ loading: false, error: 'Error al guardar los cambios' });
       }
     }
   }

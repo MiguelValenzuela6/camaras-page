@@ -20,7 +20,7 @@ export const TimeService = {
         fetch: {
           credentials: "include",
         },
-      }
+      },
     );
     return response.data;
   },
@@ -41,7 +41,7 @@ export const TimeService = {
         fetch: {
           credentials: "include",
         },
-      }
+      },
     );
     return response.data;
   },
