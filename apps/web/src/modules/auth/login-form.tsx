@@ -8,6 +8,7 @@ import { Input } from "@camaras/ui/src/components/input";
 import { Label } from "@camaras/ui/src/components/label";
 import { toast } from "sonner";
 import { signInWithGoogle, signInWithEmailAndPassword } from "@/utils/auth-connection";
+import { RegisterForm } from "./register-form";
 
 export function LoginForm({
   className,
@@ -129,6 +130,8 @@ export function LoginForm({
       <div className="text-center text-sm">
         Al iniciar sesión, aceptas los términos y condiciones de uso.
       </div>
+
+      <RegisterForm />
     </form>
   );
 }
